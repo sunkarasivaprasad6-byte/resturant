@@ -1,0 +1,1381 @@
+/* ==========================================================================
+   BIRYANI & CHINESE DISTRICT - 10,000% REFERENCE ACCURATE DESIGN SYSTEM
+   Source of truth:
+   - Desktop 16:9 references (WhatsApp Image ... 5.39.51 to 5.40.27 PM)
+   - Mobile 9:16 reference storyboard (WhatsApp Image ... 5.39.12 PM)
+   ========================================================================== */
+
+:root {
+  --color-bg-deep: #080605;
+  --color-bg-dark: #0e0a07;
+  
+  /* Text & Accent Tokens sampled directly from reference images */
+  --color-cream-pure: #ffffff;
+  --color-cream-ivory: #fbf6ee;
+  --color-cream-warm: #ffe6ad;
+  --color-text-sub: #fce5d3;
+  --color-text-muted: #d8c19d;
+  
+  --color-gold-bright: #ffd88a;
+  --color-gold-mid: #f3c777;
+  --color-gold-deep: #be842e;
+  --color-gold-border: rgba(241, 214, 159, 0.85);
+  --color-gold-glow: rgba(243, 199, 119, 0.45);
+  
+  /* Typography */
+  --font-serif-headline: 'Playfair Display', Georgia, serif;
+  --font-serif-roman: 'Cinzel', serif;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --ease-cinematic: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--color-bg-deep);
+  color: var(--color-cream-ivory);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   TOP NAVIGATION HEADER
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 84px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4.5rem;
+  background: linear-gradient(180deg, rgba(8, 6, 5, 0.88) 0%, rgba(8, 6, 5, 0.4) 65%, transparent 100%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(241, 214, 159, 0.15);
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  text-decoration: none;
+  color: var(--color-cream-ivory);
+}
+
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--color-gold-mid);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-family: var(--font-serif-roman);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--color-gold-mid);
+  text-transform: uppercase;
+}
+
+.brand-subtitle {
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 1.8vw, 2rem);
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: var(--color-gold-mid);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-gold-mid);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.header-search-btn,
+.header-menu-btn {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  color: var(--color-gold-bright) !important;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  transition: all 0.25s ease;
+}
+
+.header-search-btn:hover,
+.header-menu-btn:hover {
+  background: rgba(243, 199, 119, 0.15) !important;
+  color: #ffffff !important;
+}
+
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-gold-border);
+  background: rgba(28, 18, 10, 0.7);
+  color: var(--color-gold-bright);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s var(--ease-cinematic);
+}
+
+.header-cta:hover {
+  background: rgba(243, 199, 119, 0.15);
+  box-shadow: 0 0 20px var(--color-gold-glow);
+  transform: translateY(-1px);
+}
+
+.header-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-gold-deep), var(--color-gold-bright), var(--color-gold-deep));
+  box-shadow: 0 0 10px var(--color-gold-bright);
+}
+
+/* ==========================================================================
+   CINEMATIC HERO CONTAINER & CANVAS
+   ========================================================================== */
+.hero-scroll-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.hero-pinned-viewport {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: var(--color-bg-deep);
+}
+
+.hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+}
+
+.hero-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 45%, rgba(8, 6, 5, 0.35) 85%, rgba(8, 6, 5, 0.7) 100%),
+              linear-gradient(180deg, rgba(8, 6, 5, 0.45) 0%, transparent 20%, transparent 80%, rgba(8, 6, 5, 0.7) 100%);
+}
+
+/* ==========================================================================
+   HTML TEXT OVERLAY SYSTEM
+   ========================================================================== */
+.hero-text-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.hero-stage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.hero-stage.is-active {
+  pointer-events: auto;
+}
+
+/* Stage 1: Active by default upon website opening */
+#stage-1,
+.hero-stage#stage-1 {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+@keyframes heroOpeningEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(22px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.stage-1-content {
+  animation: heroOpeningEntrance 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.stage-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Desktop vs Mobile Block Toggling */
+.desktop-only-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-only-block {
+  display: none;
+  flex-direction: column;
+}
+
+/* Desktop Alignment Placements */
+/* Stages 1 & 2: Centered in viewport */
+.hero-stage[data-align="center"] {
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-stage[data-align="center"] .desktop-only-block {
+  align-items: center;
+  text-align: center;
+}
+
+/* Stages 3, 4, 5: Placed on LEFT in the negative space */
+/* In 1600x900, left block center is at ~430px - 450px (27% - 28% from left) */
+.hero-stage[data-align="left"] {
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.hero-stage[data-align="left"] .stage-content {
+  margin-left: clamp(4vw, 8vw, 12vw);
+  max-width: 620px;
+}
+
+.hero-stage[data-align="left"] .desktop-only-block {
+  align-items: center;
+  text-align: center;
+}
+
+/* Ref 5 supporting copy and buttons are left-aligned inside the centered block */
+.stage-5-desktop .ref5-desc {
+  text-align: left;
+  align-self: flex-start;
+}
+
+.stage-5-desktop .ref5-cta-group {
+  align-self: flex-start;
+}
+
+/* ==========================================================================
+   REUSABLE ORNAMENTS & ICONS (Sampled directly from references)
+   ========================================================================== */
+.chef-hat-icon {
+  width: 46px;
+  height: 42px;
+  color: var(--color-gold-border);
+  filter: drop-shadow(0 0 14px rgba(241, 214, 159, 0.45));
+  margin-bottom: 1.5rem;
+}
+
+/* Flanking lines */
+.flank-line {
+  height: 1.5px;
+  width: 90px;
+}
+
+.flank-line.flank-left {
+  background: linear-gradient(90deg, transparent, var(--color-gold-mid));
+}
+
+.flank-line.flank-right {
+  background: linear-gradient(90deg, var(--color-gold-mid), transparent);
+}
+
+/* Eyebrow with text */
+.eyebrow-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.eyebrow-line {
+  height: 1px;
+  width: 80px;
+}
+
+.eyebrow-line.flank-left {
+  background: linear-gradient(90deg, transparent, var(--color-gold-mid));
+}
+
+.eyebrow-line.flank-right {
+  background: linear-gradient(90deg, var(--color-gold-mid), transparent);
+}
+
+.eyebrow-text {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.38em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+/* Divider Bullseye Ornament */
+.divider-ornament {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+}
+
+.divider-line {
+  height: 1px;
+  width: 110px;
+}
+
+.divider-line.flank-left {
+  background: linear-gradient(90deg, transparent, rgba(212, 165, 86, 0.6));
+}
+
+.divider-line.flank-right {
+  background: linear-gradient(90deg, rgba(212, 165, 86, 0.6), transparent);
+}
+
+.divider-bullseye {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-gold-mid);
+  background-color: var(--color-bg-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 8px rgba(243, 199, 119, 0.5);
+}
+
+.divider-bullseye .inner-dot {
+  width: 4.5px;
+  height: 4.5px;
+  border-radius: 50%;
+  background-color: var(--color-gold-bright);
+  box-shadow: 0 0 6px var(--color-gold-bright);
+}
+
+.divider-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-gold-bright);
+  box-shadow: 0 0 6px var(--color-gold-bright);
+}
+
+/* ==========================================================================
+   STAGE 1: THE AROMA STARTS THE JOURNEY
+   Desktop Reference: WhatsApp Image 2026-09-18 at 5.39.51 PM
+   ========================================================================== */
+.headline-flanked-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+  margin-bottom: 0.45rem;
+}
+
+.headline-flanked-wrapper .flank-line {
+  width: 110px;
+  height: 1.5px;
+}
+
+.ref1-headline {
+  font-family: var(--font-serif-roman);
+  font-size: clamp(2.6rem, 3.6vw, 3.8rem);
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  color: var(--color-cream-pure);
+  text-transform: uppercase;
+  text-shadow: 0 0 40px rgba(243, 199, 119, 0.55);
+}
+
+.ref1-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.15vw, 1.2rem);
+  font-weight: 400;
+  letter-spacing: 0.52em;
+  color: var(--color-cream-ivory);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   STAGE 2: AROMATIC. AUTHENTIC. UNFORGETTABLE.
+   Desktop Reference: WhatsApp Image 2026-09-18 at 5.39.59 PM
+   ========================================================================== */
+.ref2-headline {
+  font-family: var(--font-serif-headline);
+  font-size: clamp(2.6rem, 3.8vw, 4.0rem);
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  color: var(--color-cream-pure);
+  text-shadow: 0 0 35px rgba(243, 199, 119, 0.45);
+  margin-bottom: 0.9rem;
+}
+
+.ref2-sub-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.1rem;
+}
+
+.ref2-sub-row .sub-flank-line {
+  width: 55px;
+  height: 1px;
+}
+
+.ref2-sub-row .sub-flank-line.flank-left {
+  background: linear-gradient(90deg, transparent, rgba(212, 165, 86, 0.5));
+}
+
+.ref2-sub-row .sub-flank-line.flank-right {
+  background: linear-gradient(90deg, rgba(212, 165, 86, 0.5), transparent);
+}
+
+.ref2-sub-row .sub-text {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9rem, 1.05vw, 1.05rem);
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  color: var(--color-text-sub);
+}
+
+.gold-leaf-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ==========================================================================
+   STAGE 3: FROM THE FIRST AROMA
+   Desktop Reference: WhatsApp Image 2026-09-18 at 5.40.10 PM
+   ========================================================================== */
+.ref3-lead {
+  font-family: var(--font-serif-roman);
+  font-size: clamp(1.8rem, 2.7vw, 2.9rem);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--color-cream-ivory);
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.ref3-aroma-glow {
+  font-family: var(--font-serif-headline);
+  font-size: clamp(4.2rem, 6.2vw, 6.4rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  background: linear-gradient(180deg, #fffbee 0%, #f7cf82 35%, #d9a04a 70%, #9e6d24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 35px rgba(243, 199, 119, 0.55));
+  margin-bottom: 0.4rem;
+}
+
+.ref3-lastbite {
+  font-family: var(--font-serif-headline);
+  font-style: italic;
+  font-size: clamp(1.5rem, 2.1vw, 2.3rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--color-cream-ivory);
+}
+
+/* ==========================================================================
+   STAGE 4: BIRYANI & CHINESE
+   Desktop Reference: WhatsApp Image 2026-09-18 at 5.40.17 PM
+   ========================================================================== */
+.ref4-headline {
+  font-family: var(--font-serif-headline);
+  font-size: clamp(2.6rem, 4.2vw, 4.4rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.ref4-headline .gold-text {
+  background: linear-gradient(180deg, #fffbee 0%, #f7cf82 35%, #d9a04a 70%, #9e6d24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 35px rgba(243, 199, 119, 0.55));
+}
+
+.ref4-headline .cream-text {
+  color: var(--color-cream-ivory);
+  text-shadow: 0 0 35px rgba(243, 199, 119, 0.4);
+}
+
+.ref4-subtitle {
+  font-family: var(--font-serif-headline);
+  font-style: italic;
+  font-size: clamp(1.35rem, 1.85vw, 2.0rem);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--color-cream-ivory);
+}
+
+/* ==========================================================================
+   STAGE 5: FINAL HERO (It's not just Food, It's an Experience.)
+   Desktop Reference: WhatsApp Image 2026-09-18 at 5.40.27 PM
+   ========================================================================== */
+.ref5-headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-serif-headline);
+  line-height: 1.05;
+  margin-bottom: 0.65rem;
+}
+
+.ref5-headline .headline-l1,
+.ref5-headline .headline-l2 {
+  font-size: clamp(2.6rem, 4.1vw, 4.2rem);
+  font-weight: 600;
+  color: var(--color-cream-warm);
+  letter-spacing: 0.015em;
+  text-shadow: 0 0 35px rgba(243, 199, 119, 0.35);
+}
+
+.ref5-headline .headline-l3.experience-gold {
+  font-size: clamp(3.8rem, 6.0vw, 6.2rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: linear-gradient(180deg, #fffbee 0%, #f7cf82 35%, #d9a04a 70%, #9e6d24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 45px rgba(243, 199, 119, 0.6));
+}
+
+.ref5-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9rem, 1.05vw, 1.1rem);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+  color: var(--color-cream-pure);
+  max-width: 500px;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.ref5-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+/* Primary Pill Button */
+.btn-primary-explore-exact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 13px 36px;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-gold-border);
+  background: rgba(26, 17, 10, 0.78);
+  color: var(--color-gold-bright);
+  font-family: var(--font-serif-roman);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 22px rgba(212, 165, 86, 0.3);
+  transition: all 0.35s var(--ease-cinematic);
+}
+
+.btn-primary-explore-exact:hover {
+  background: rgba(45, 28, 15, 0.9);
+  border-color: #ffffff;
+  box-shadow: 0 0 35px var(--color-gold-glow);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
+
+.btn-primary-explore-exact .btn-arrow {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary-explore-exact:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Secondary Button with Underline */
+.btn-secondary-categories-exact {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-cream-ivory);
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  border-bottom: 1.5px solid var(--color-gold-border);
+  padding-bottom: 4px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary-categories-exact:hover {
+  color: var(--color-gold-bright);
+  border-bottom-color: var(--color-gold-bright);
+  text-shadow: 0 0 15px var(--color-gold-glow);
+}
+
+/* ==========================================================================
+   MOBILE STORYBOARD EXACT STYLING (< 768px)
+   Matches WhatsApp Image 2026-09-18 at 5.39.12 PM panels 2, 3, 4, 5, 6
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  .site-header {
+    height: 56px;
+    padding: 0 1.25rem;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .header-location-pill,
+  .header-search-btn,
+  .header-menu-btn,
+  .header-mobile-menu-btn,
+  .header-cta,
+  .nav-links,
+  .brand-tagline {
+    display: none !important;
+  }
+
+  .header-left {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+  }
+
+  .brand-logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    text-decoration: none !important;
+  }
+
+  .header-brand-img {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 1.5px solid var(--color-gold-border) !important;
+    box-shadow: 0 0 10px rgba(243, 199, 119, 0.35) !important;
+    flex-shrink: 0 !important;
+  }
+
+  .brand-text,
+  .brand-title-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    line-height: 1.15 !important;
+  }
+
+  .brand-title,
+  .brand-name {
+    font-family: var(--font-serif-headline) !important;
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    color: var(--color-gold-bright) !important;
+    text-transform: uppercase !important;
+    white-space: nowrap !important;
+  }
+
+  .brand-subtitle {
+    display: block !important;
+    font-family: var(--font-sans) !important;
+    font-size: 0.58rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.28em !important;
+    color: var(--color-gold-mid) !important;
+    text-transform: uppercase !important;
+    margin-top: 1px !important;
+    white-space: nowrap !important;
+  }
+
+  .header-progress-bar {
+    top: 0 !important;
+    bottom: auto !important;
+    height: 2px !important;
+  }
+
+  .header-cart-btn {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50% !important;
+    background: rgba(22, 14, 9, 0.45) !important;
+    border: 1.5px solid rgba(241, 214, 159, 0.5) !important;
+    color: #ffd88a !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+  }
+
+  .header-cart-btn svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  /* Swap to mobile blocks */
+  .desktop-only-block {
+    display: none !important;
+  }
+
+  .mobile-only-block {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Override desktop data-align vertical centering completely:
+     Force flex-direction: column, justify-content: flex-start (top), and align-items: center (horizontal) */
+  .hero-stage,
+  .hero-stage[data-align="center"],
+  .hero-stage[data-align="left"],
+  .hero-pinned-viewport .hero-stage {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .stage-content,
+  .hero-stage[data-align="left"] .stage-content,
+  .hero-stage[data-align="center"] .stage-content {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    max-width: 90vw !important;
+    width: 100% !important;
+    padding: 0 !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* Exact stage-specific vertical elevation matching 9:16 storyboard panels:
+     Places all text in the atmospheric golden zone exactly as shown in reference */
+  #stage-1,
+  .hero-stage#stage-1 {
+    padding-top: clamp(110px, 20vh, 160px) !important;
+  }
+
+  #stage-2,
+  .hero-stage#stage-2 {
+    padding-top: clamp(110px, 20vh, 160px) !important;
+  }
+
+  #stage-3,
+  .hero-stage#stage-3 {
+    padding-top: clamp(90px, 16vh, 130px) !important;
+  }
+
+  #stage-4,
+  .hero-stage#stage-4 {
+    padding-top: clamp(78px, 13vh, 110px) !important;
+  }
+
+  #stage-5,
+  .hero-stage#stage-5 {
+    padding-top: clamp(66px, 9vh, 82px) !important;
+  }
+
+  /* Mobile Divider Ornament: — • — */
+  .mobile-only-block .divider-ornament {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0.55rem auto;
+  }
+
+  .mobile-only-block .divider-line {
+    width: 36px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(241, 214, 159, 0.75), transparent);
+  }
+
+  .mobile-only-block .divider-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--color-gold-bright);
+    box-shadow: 0 0 8px var(--color-gold-bright);
+  }
+
+  /* Mobile Panel 2: AROMA */
+  .stage-1-mobile .eyebrow-wrapper {
+    gap: 0.6rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .stage-1-mobile .eyebrow-line {
+    width: 24px;
+    height: 1px;
+    background: rgba(241, 214, 159, 0.65);
+  }
+
+  .stage-1-mobile .eyebrow-text {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    color: var(--color-gold-mid);
+    text-transform: uppercase;
+  }
+
+  .mobile-stacked-headline {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-serif-headline);
+    font-size: clamp(1.8rem, 6vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: 0.05em;
+    background: linear-gradient(180deg, #ffffff 0%, #fff5e0 25%, #f7cf82 65%, #c8933b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 25px rgba(243, 199, 119, 0.45));
+    margin: 0.15rem 0 0.25rem 0;
+  }
+
+  /* Mobile Panel 3: AUTHENTIC */
+  .mobile-three-line-serif {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-serif-headline);
+    font-size: clamp(1.55rem, 5vw, 1.95rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    background: linear-gradient(180deg, #ffffff 0%, #fff5e0 25%, #f7cf82 65%, #c8933b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 25px rgba(243, 199, 119, 0.45));
+    margin-bottom: 0.25rem;
+  }
+
+  .mobile-sub-italic {
+    font-family: var(--font-serif-headline);
+    font-style: italic;
+    font-size: clamp(0.85rem, 2.8vw, 0.98rem);
+    color: #fff8ee;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Mobile Panel 4: JOURNEY */
+  .mobile-eyebrow-simple {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    color: var(--color-gold-mid);
+    text-transform: uppercase;
+    margin-bottom: 0.15rem;
+  }
+
+  .mobile-aroma-gold {
+    font-family: var(--font-serif-headline);
+    font-size: clamp(1.85rem, 6.2vw, 2.35rem);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    background: linear-gradient(180deg, #ffffff 0%, #fff5e0 25%, #f7cf82 65%, #c8933b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 25px rgba(243, 199, 119, 0.45));
+    margin-bottom: 0.2rem;
+  }
+
+  /* Mobile Panel 5: CUISINE */
+  .mobile-biryani-chinese {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-serif-headline);
+    font-size: clamp(1.85rem, 6.2vw, 2.35rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.05em;
+    background: linear-gradient(180deg, #ffffff 0%, #fff5e0 25%, #f7cf82 65%, #c8933b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 25px rgba(243, 199, 119, 0.45));
+    margin-bottom: 0.25rem;
+  }
+
+  .mobile-moments-italic {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-serif-headline);
+    font-style: italic;
+    font-size: clamp(0.9rem, 2.9vw, 1.05rem);
+    color: #fff8ee;
+    line-height: 1.2;
+    margin-bottom: 0.25rem;
+  }
+
+  /* Mobile Panel 6: FINAL HERO (Exact Match to User Reference Screenshot) */
+  .stage-5-mobile {
+    width: min(88vw, 420px) !important;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+    align-items: center !important;
+  }
+
+  /* Top Eyebrow: ──── GOOD FOOD ──── / HAPPIER PEOPLE */
+  .mobile-eyebrow-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.4rem;
+  }
+
+  .mobile-eyebrow-line-row {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+  }
+
+  .mobile-eyebrow-wrapper .eyebrow-line {
+    width: 34px;
+    height: 1px;
+    background: rgba(241, 214, 159, 0.65);
+  }
+
+  .mobile-eyebrow-wrapper .eyebrow-text {
+    font-family: var(--font-sans);
+    font-size: clamp(0.68rem, 2.2vw, 0.74rem);
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    color: #ffd88a;
+    text-transform: uppercase;
+  }
+
+  .mobile-eyebrow-wrapper .eyebrow-subtext {
+    font-family: var(--font-sans);
+    font-size: clamp(0.64rem, 2vw, 0.7rem);
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    color: #ffd88a;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+    text-align: center;
+  }
+
+  /* Main Headline: It's not just / Food, It's an / Experience. */
+  .mobile-experience-headline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: var(--font-serif-headline);
+    font-size: clamp(1.85rem, 6.2vw, 2.35rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: 0.01em;
+    margin: 0.35rem 0 0.25rem 0;
+    color: #fff8ee;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85), 0 0 25px rgba(243, 199, 119, 0.25);
+  }
+
+  .mobile-experience-headline span {
+    display: block;
+  }
+
+  .mobile-experience-headline .gold-experience {
+    font-size: clamp(2.15rem, 7.2vw, 2.7rem);
+    font-weight: 700;
+    background: linear-gradient(180deg, #ffffff 0%, #fff2d6 20%, #f6cb7c 60%, #c9933d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 16px rgba(243, 199, 119, 0.42));
+  }
+
+  /* Decorative Divider: ──── ● ──── */
+  .stage-5-mobile .divider-ornament {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0.45rem auto 0.65rem auto;
+  }
+
+  .stage-5-mobile .divider-line {
+    width: 36px;
+    height: 1px;
+    background: rgba(241, 214, 159, 0.5);
+  }
+
+  .stage-5-mobile .divider-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #ffd88a;
+    box-shadow: 0 0 8px #ffd88a;
+  }
+
+  /* Supporting Text: Bold flavours. Great food. Happier people. */
+  .mobile-desc-copy {
+    font-family: var(--font-sans);
+    font-size: clamp(0.74rem, 2.5vw, 0.82rem);
+    font-weight: 400;
+    line-height: 1.4;
+    color: #e8dac8;
+    max-width: 90vw;
+    margin: 0 auto 1.15rem auto;
+    text-align: center;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+  }
+
+  /* CTA Buttons */
+  .mobile-cta-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
+    width: 100%;
+  }
+
+  /* Primary Button: Wide Pill with Gold Outline and Dark Glass Center */
+  .mobile-cta-column .btn-primary-explore-exact {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 0.65rem 2.4rem;
+    border-radius: 999px;
+    border: 1.5px solid #d4a556;
+    background: rgba(26, 17, 10, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffd88a;
+    font-family: var(--font-sans);
+    font-size: clamp(0.74rem, 2.4vw, 0.8rem);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(243, 199, 119, 0.08);
+    width: auto;
+    max-width: none;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-cta-column .btn-primary-explore-exact .btn-arrow {
+    color: #ffd88a;
+    font-size: 1rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-cta-column .btn-primary-explore-exact:hover {
+    background: rgba(243, 199, 119, 0.18);
+    border-color: #ffd88a;
+    box-shadow: 0 0 25px rgba(243, 199, 119, 0.45);
+    transform: translateY(-1px);
+  }
+
+  .mobile-cta-column .btn-primary-explore-exact:hover .btn-arrow {
+    transform: translateX(4px);
+  }
+
+  /* Secondary Button: Gold Text with Underline */
+  .mobile-cta-column .btn-secondary-categories-exact {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: clamp(0.68rem, 2.2vw, 0.74rem);
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    color: #ffd88a;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1.5px solid rgba(241, 214, 159, 0.7);
+    padding-bottom: 3px;
+    margin-top: 0.25rem;
+    opacity: 0.95;
+    transition: all 0.25s ease;
+  }
+
+  .mobile-cta-column .btn-secondary-categories-exact:hover {
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   ATMOSPHERIC STEAM TRANSITION OVERLAY
+   ========================================================================== */
+.steam-transition-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 25;
+  pointer-events: none;
+  opacity: 0;
+  will-change: opacity, transform;
+  overflow: hidden;
+}
+
+.steam-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.steam-ambient {
+  background: radial-gradient(
+    circle at 50% 65%,
+    rgba(224, 182, 120, 0.28) 0%,
+    rgba(140, 95, 48, 0.35) 45%,
+    rgba(35, 22, 14, 0.75) 80%,
+    rgba(15, 10, 7, 0.95) 100%
+  );
+  filter: blur(40px);
+}
+
+.steam-plume-1 {
+  background: radial-gradient(
+    ellipse 60% 50% at 45% 70%,
+    rgba(240, 210, 165, 0.3) 0%,
+    rgba(180, 130, 80, 0.2) 45%,
+    transparent 75%
+  );
+  filter: blur(50px);
+  will-change: transform;
+}
+
+.steam-plume-2 {
+  background: radial-gradient(
+    ellipse 70% 60% at 55% 60%,
+    rgba(255, 230, 190, 0.35) 0%,
+    rgba(170, 120, 70, 0.25) 50%,
+    transparent 80%
+  );
+  filter: blur(60px);
+  will-change: transform;
+}
+
+.steam-plume-3 {
+  background: radial-gradient(
+    ellipse 50% 70% at 50% 50%,
+    rgba(230, 190, 140, 0.25) 0%,
+    transparent 70%
+  );
+  filter: blur(45px);
+  will-change: transform;
+}
+
+.steam-density {
+  background: linear-gradient(
+    180deg,
+    rgba(14, 9, 6, 0.3) 0%,
+    rgba(18, 12, 8, 0.8) 60%,
+    rgba(12, 8, 5, 1) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.1s linear;
+}
+
+/* ==========================================================================
+   POST-HERO CLEAN HANDOFF BOUNDARY
+   ========================================================================== */
+.post-hero-boundary {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  background-color: var(--color-bg-deep);
+  border-top: 1px solid rgba(241, 214, 159, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 2rem;
+  z-index: 5;
+}
+
+.boundary-icon {
+  width: 38px;
+  height: 38px;
+  color: var(--color-gold-mid);
+  margin-bottom: 1.5rem;
+}
+
+.boundary-tagline {
+  font-family: var(--font-serif-roman);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  color: var(--color-gold-mid);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.boundary-heading {
+  font-family: var(--font-serif-headline);
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 600;
+  color: var(--color-cream-pure);
+  letter-spacing: 0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.boundary-desc {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* ==========================================================================
+   REDUCED MOTION SUPPORT
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .hero-stage {
+    transition: opacity 0.3s ease;
+    transform: none !important;
+  }
+
+  .steam-layer {
+    filter: none;
+    transform: none !important;
+  }
+
+  .btn-primary-explore-exact,
+  .header-cta {
+    transition: none;
+    transform: none !important;
+  }
+}

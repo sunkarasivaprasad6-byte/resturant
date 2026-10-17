@@ -1,0 +1,776 @@
+/* ==========================================================================
+   BIRYANI & CHINESE DISTRICT - TABLE RESERVATION SECTION STYLES
+   Visual Source of Truth: table_reservation_reference.jpg
+   ========================================================================== */
+
+/* Main Section Container */
+.reservation-section {
+  position: relative;
+  width: 100%;
+  background-color: #0c0805;
+  color: var(--color-cream-ivory);
+  padding: 4.5rem 4.5rem 3.5rem 4.5rem;
+  overflow: hidden;
+  border-top: 1px solid rgba(241, 214, 159, 0.12);
+  z-index: 15;
+}
+
+/* Background Ambient Glow & Lighting */
+.reservation-ambient-glow {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(217, 160, 74, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Main Two-Column Layout Container */
+.reservation-hero-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  z-index: 3;
+}
+
+/* Left Content Column */
+.reservation-content-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 3;
+}
+
+/* Eyebrow: GOOD FOOD BETTER COMPANY */
+.reservation-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.reservation-eyebrow .flank-line {
+  width: 38px;
+  height: 1.5px;
+  background-color: var(--color-gold-mid);
+  opacity: 0.85;
+}
+
+.reservation-eyebrow-text {
+  font-family: var(--font-serif-roman);
+  font-size: clamp(0.72rem, 0.85vw, 0.88rem);
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--color-gold-bright);
+  text-transform: uppercase;
+}
+
+/* Main Heading: Book Your Table */
+.reservation-title {
+  font-family: var(--font-serif-headline);
+  font-size: clamp(3.2rem, 5.2vw, 5.4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem 0;
+  background: linear-gradient(180deg, #ffffff 0%, #fff6e5 28%, #f7cf82 65%, #c8933b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 25px rgba(243, 199, 119, 0.22));
+}
+
+.reservation-title span {
+  display: block;
+}
+
+/* Supporting Text */
+.reservation-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(0.92rem, 1.05vw, 1.05rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: #eeddcc;
+  max-width: 500px;
+  margin-bottom: 2.2rem;
+  opacity: 0.92;
+}
+
+/* Reserve a Table CTA Button */
+.btn-reserve-table-prominent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.95rem 2.4rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffd88a 0%, #f3c777 50%, #d89b3f 100%);
+  color: #140d07;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 25px rgba(243, 199, 119, 0.45);
+  transition: all 0.35s var(--ease-cinematic);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-reserve-table-prominent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-reserve-table-prominent:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: linear-gradient(135deg, #ffe5ab 0%, #ffd88a 60%, #e5a746 100%);
+  box-shadow: 0 8px 35px rgba(243, 199, 119, 0.65);
+}
+
+.btn-reserve-table-prominent:hover::before {
+  left: 100%;
+}
+
+.btn-reserve-table-prominent:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.btn-calendar-icon {
+  width: 22px;
+  height: 22px;
+  color: #140d07;
+  flex-shrink: 0;
+}
+
+.btn-arrow-icon {
+  width: 18px;
+  height: 18px;
+  color: #140d07;
+  transition: transform 0.3s ease;
+}
+
+.btn-reserve-table-prominent:hover .btn-arrow-icon {
+  transform: translateX(4px);
+}
+
+/* Trust Badges Row */
+.reservation-trust-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2.8rem;
+  flex-wrap: wrap;
+}
+
+.trust-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.trust-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(241, 214, 159, 0.45);
+  background: rgba(22, 14, 9, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold-bright);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.trust-badge-item:hover .trust-icon-circle {
+  border-color: var(--color-gold-bright);
+  box-shadow: 0 0 14px rgba(243, 199, 119, 0.35);
+  transform: scale(1.05);
+}
+
+.trust-icon-circle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.trust-badge-text {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #eeddcc;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+}
+
+/* Right Visual Column (Restaurant Interior) */
+.reservation-visual-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.reservation-img-frame {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.8), 0 0 35px rgba(212, 165, 86, 0.15);
+  border: 1px solid rgba(241, 214, 159, 0.15);
+}
+
+.reservation-interior-img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease-cinematic);
+}
+
+.reservation-visual-right:hover .reservation-interior-img {
+  transform: scale(1.03);
+}
+
+/* Soft Vignette Overlay on the image */
+.reservation-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 60% 50%, transparent 45%, rgba(12, 8, 5, 0.65) 100%),
+              linear-gradient(90deg, rgba(12, 8, 5, 0.75) 0%, transparent 35%);
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   BENEFITS FEATURE STRIP
+   ========================================================================== */
+.reservation-benefits-strip {
+  max-width: 1600px;
+  margin: 3.5rem auto 0 auto;
+  background: rgba(18, 12, 8, 0.9);
+  border: 1.5px solid rgba(241, 214, 159, 0.22);
+  border-radius: 18px;
+  padding: 1.8rem 2.8rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: 3;
+}
+
+.benefit-card-item {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  transition: transform 0.3s ease;
+}
+
+.benefit-card-item:hover {
+  transform: translateY(-2px);
+}
+
+.benefit-card-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-gold-border);
+  background: rgba(30, 18, 11, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold-bright);
+  flex-shrink: 0;
+  box-shadow: 0 0 12px rgba(243, 199, 119, 0.2);
+  transition: all 0.3s ease;
+}
+
+.benefit-card-item:hover .benefit-card-circle {
+  border-color: #ffffff;
+  background: rgba(45, 28, 16, 0.95);
+  box-shadow: 0 0 20px rgba(243, 199, 119, 0.45);
+}
+
+.benefit-card-circle svg {
+  width: 22px;
+  height: 22px;
+}
+
+.benefit-card-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.benefit-card-title {
+  font-family: var(--font-serif-roman);
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--color-cream-pure);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.25rem;
+}
+
+.benefit-card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+/* ==========================================================================
+   RESERVATION BOOKING MODAL (Hidden by default)
+   ========================================================================== */
+.reservation-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s ease, visibility 0.35s;
+}
+
+.reservation-modal-overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.reservation-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #120b07;
+  border: 1.5px solid rgba(241, 214, 159, 0.3);
+  border-radius: 20px;
+  padding: 2.4rem 2.8rem;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.95), 0 0 40px rgba(243, 199, 119, 0.25);
+  transform: scale(0.94) translateY(20px);
+  transition: transform 0.4s var(--ease-cinematic), opacity 0.4s ease;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(241, 214, 159, 0.3) transparent;
+}
+
+.reservation-modal-dialog::-webkit-scrollbar {
+  width: 6px;
+}
+
+.reservation-modal-dialog::-webkit-scrollbar-thumb {
+  background: rgba(241, 214, 159, 0.3);
+  border-radius: 3px;
+}
+
+.reservation-modal-overlay.is-active .reservation-modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+/* Modal Header */
+.reservation-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(241, 214, 159, 0.15);
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.modal-header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.reservation-modal-title {
+  font-family: var(--font-serif-headline);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-cream-pure);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.3rem;
+}
+
+.reservation-modal-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.btn-modal-close {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 0.35rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-modal-close:hover {
+  color: var(--color-gold-bright);
+  background: rgba(243, 199, 119, 0.12);
+}
+
+.btn-modal-close svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Modal Form Styles */
+.reservation-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.form-group-full {
+  grid-column: span 2;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-label {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-gold-bright);
+  text-transform: uppercase;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(241, 214, 159, 0.22);
+  background: rgba(22, 14, 9, 0.85);
+  color: var(--color-cream-pure);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--color-gold-mid);
+  box-shadow: 0 0 12px rgba(243, 199, 119, 0.3);
+  background: rgba(30, 18, 12, 0.95);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: rgba(216, 193, 157, 0.45);
+}
+
+.form-select {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23f3c777' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 2.2rem;
+}
+
+.form-select option {
+  background: #140e0a;
+  color: var(--color-cream-pure);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-field.has-error .form-input,
+.form-field.has-error .form-select {
+  border-color: #e74c3c;
+  background: rgba(231, 76, 60, 0.08);
+}
+
+.form-error-msg {
+  font-size: 0.72rem;
+  color: #ff6b6b;
+  display: none;
+}
+
+.form-field.has-error .form-error-msg {
+  display: block;
+}
+
+/* Modal Actions */
+.modal-actions-row {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 0.8rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(241, 214, 159, 0.12);
+}
+
+.btn-modal-cancel {
+  background: none;
+  border: 1px solid rgba(241, 214, 159, 0.25);
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-modal-cancel:hover {
+  color: var(--color-cream-pure);
+  border-color: var(--color-gold-bright);
+}
+
+.btn-modal-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-gold-bright);
+  color: #140d08;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(243, 199, 119, 0.35);
+  transition: all 0.3s ease;
+}
+
+.btn-modal-submit:hover {
+  background: #ffe3a8;
+  box-shadow: 0 6px 25px rgba(243, 199, 119, 0.55);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   RESERVATION CONFIRMATION CARD (Post-submission state)
+   ========================================================================== */
+.reservation-confirm-card {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 0.5rem;
+}
+
+.reservation-confirm-card.is-visible {
+  display: flex;
+}
+
+.confirm-badge-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(46, 204, 113, 0.15);
+  border: 2px solid #2ecc71;
+  color: #2ecc71;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 0 20px rgba(46, 204, 113, 0.3);
+}
+
+.confirm-main-title {
+  font-family: var(--font-serif-headline);
+  font-size: 1.85rem;
+  color: var(--color-cream-pure);
+  margin-bottom: 0.5rem;
+}
+
+.confirm-greeting {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-gold-bright);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.confirm-notice {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  max-width: 440px;
+  margin-bottom: 1.8rem;
+}
+
+.confirm-details-summary {
+  width: 100%;
+  background: rgba(22, 14, 9, 0.8);
+  border: 1px solid rgba(241, 214, 159, 0.2);
+  border-radius: 12px;
+  padding: 1.25rem 1.6rem;
+  margin-bottom: 1.8rem;
+  text-align: left;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(241, 214, 159, 0.08);
+  font-size: 0.84rem;
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  color: var(--color-text-muted);
+}
+
+.summary-val {
+  color: var(--color-cream-pure);
+  font-weight: 600;
+}
+
+.btn-confirm-done {
+  padding: 0.8rem 2.4rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-gold-bright);
+  color: #140d08;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-confirm-done:hover {
+  background: #ffe3a8;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVE STYLING (< 1024px and < 768px)
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .reservation-section {
+    padding: 3.5rem 2.5rem 2.5rem 2.5rem;
+  }
+
+  .reservation-benefits-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1.6rem 1.8rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .reservation-section {
+    padding: 2.5rem 1.25rem 2.5rem 1.25rem;
+  }
+
+  .reservation-hero-container {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+  /* In mobile: Restaurant Visual renders on top */
+  .reservation-visual-right {
+    order: -1;
+  }
+
+  .reservation-interior-img {
+    height: 240px;
+  }
+
+  .reservation-title {
+    font-size: 2.75rem;
+  }
+
+  .reservation-desc {
+    font-size: 0.88rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .btn-reserve-table-prominent {
+    width: 100%;
+    justify-content: center;
+    padding: 0.95rem 1.5rem;
+  }
+
+  .reservation-trust-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .reservation-benefits-strip {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1.4rem 1.25rem;
+    margin-top: 2.5rem;
+  }
+
+  .reservation-modal-dialog {
+    padding: 1.8rem 1.4rem;
+    max-height: 95vh;
+  }
+
+  .reservation-form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .form-group-full {
+    grid-column: span 1;
+  }
+
+  .modal-actions-row {
+    grid-column: span 1;
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .btn-modal-cancel,
+  .btn-modal-submit {
+    width: 100%;
+    justify-content: center;
+  }
+}

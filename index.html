@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="theme-color" content="#080605" />
+  <title>Biryani &amp; Chinese District | A Taste Beyond Ordinary</title>
+  <meta name="description"
+    content="Experience the authentic flavours of royal biryanis and signature Chinese dishes at Biryani &amp; Chinese District. A journey of aromas, heritage, and culinary artistry." />
+
+  <!-- Google Fonts: Playfair Display, Cinzel, Montserrat, and Caveat / Alex Brush -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Caveat:wght@500;600;700&family=Cinzel:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="/src/styles/hero.css" />
+  <link rel="stylesheet" href="/src/styles/menu.css" />
+  <link rel="stylesheet" href="/src/styles/district_flow.css" />
+  <link rel="stylesheet" href="/src/styles/reservation.css" />
+  <link rel="stylesheet" href="/src/styles/location.css" />
+  <link rel="stylesheet" href="/src/styles/footer.css" />
+</head>
+
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-left">
+      <a href="#" class="brand-logo" aria-label="Biryani &amp; Chinese District Home">
+        <img src="/menu_assets/restaurant_logo.png" alt="Biryani &amp; Chinese District Logo"
+          class="header-brand-img" />
+        <div class="brand-text">
+          <span class="brand-title">BIRYANI &amp; CHINESE</span>
+          <span class="brand-subtitle">DISTRICT</span>
+          <span class="brand-tagline">BIRYANI MEETS A BIGGER WORLD</span>
+        </div>
+      </a>
+
+      <!-- Location Pill -->
+      <button class="header-location-pill" id="header-location-pill"
+        title="Meherma Barahat Pirpanti Road, Near Purana Naaz Cinema Hall">
+        <svg class="header-location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <span class="location-text">Meherma</span>
+        <svg class="location-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12"
+          height="12">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <nav aria-label="Main Navigation">
+      <ul class="nav-links">
+        <li><a href="#hero-scroll-wrapper" class="nav-link">Home</a></li>
+        <li><a href="#menu-section" class="nav-link">Menu</a></li>
+        <li><a href="#reservation-section" class="nav-link">Reserve Table</a></li>
+        <li><a href="#header-location-pill" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-actions">
+      <!-- Search Trigger Icon -->
+      <button class="header-search-btn" id="header-search-btn" aria-label="Search Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+
+      <!-- Header Cart Trigger Button -->
+      <button class="header-cart-btn" id="header-cart-btn" aria-label="View Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="header-cart-badge" id="header-cart-badge">0</span>
+      </button>
+
+      <!-- Mobile Hamburger Icon -->
+      <button class="header-menu-btn" id="header-menu-btn" aria-label="Toggle Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+          stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <a href="#reservation-section" class="header-cta" id="header-reserve-btn" data-open-reservation>Reserve Table</a>
+    </div>
+
+    <!-- Scroll progress indicator -->
+    <div class="header-progress-bar" id="header-progress-bar"></div>
+  </header>
+
+  <!-- Main Cinematic Hero Section -->
+  <main>
+    <div class="hero-scroll-wrapper" id="hero-scroll-wrapper">
+      <div class="hero-pinned-viewport" id="hero-pinned-viewport">
+
+        <!-- Canvas for WebP Frame Sequence -->
+        <canvas id="hero-canvas" class="hero-canvas"></canvas>
+
+        <!-- Ambient Cinematic Vignette -->
+        <div class="hero-vignette"></div>
+
+        <!-- HTML / CSS Text Overlay System -->
+        <div class="hero-text-overlay" id="hero-text-overlay">
+
+          <!-- ==========================================
+               PHASE 1: THE AROMA STARTS THE JOURNEY
+               Desktop: WhatsApp Image 2026-09-18 at 5.39.51 PM
+               Mobile: Panel 2 (AROMA)
+               ========================================== -->
+          <div class="hero-stage" id="stage-1" data-align="center">
+            <div class="stage-content stage-1-content">
+
+              <!-- Desktop Version of Stage 1 -->
+              <div class="desktop-only-block stage-1-desktop">
+                <!-- Chef Hat Icon -->
+                <svg class="chef-hat-icon" viewBox="0 0 54 48" fill="none" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M14 32 C9 30, 6 24, 8 18 C10 12, 17 10, 20 13 C22 6, 32 6, 34 13 C37 10, 44 12, 46 18 C48 24, 45 30, 40 32" />
+                  <path d="M23 15 V 30" />
+                  <path d="M31 15 V 30" />
+                  <ellipse cx="27" cy="38" rx="14" ry="4" />
+                </svg>
+
+                <!-- THE AROMA with flanking lines -->
+                <div class="headline-flanked-wrapper">
+                  <span class="flank-line flank-left"></span>
+                  <h1 class="ref1-headline">THE AROMA</h1>
+                  <span class="flank-line flank-right"></span>
+                </div>
+
+                <p class="ref1-subtitle">STARTS THE JOURNEY</p>
+
+                <!-- Divider ornament: concentric ring with center dot -->
+                <div class="divider-ornament">
+                  <span class="divider-line flank-left"></span>
+                  <span class="divider-bullseye">
+                    <span class="inner-dot"></span>
+                  </span>
+                  <span class="divider-line flank-right"></span>
+                </div>
+              </div>
+
+              <!-- Mobile Version of Stage 1 (Panel 2 in storyboard) -->
+              <div class="mobile-only-block stage-1-mobile">
+                <div class="eyebrow-wrapper">
+                  <span class="eyebrow-line flank-left"></span>
+                  <span class="eyebrow-text">THE AROMA</span>
+                  <span class="eyebrow-line flank-right"></span>
+                </div>
+
+                <h1 class="mobile-stacked-headline">
+                  <span>STARTS</span>
+                  <span>THE JOURNEY</span>
+                </h1>
+
+                <div class="divider-ornament">
+                  <span class="divider-line flank-left"></span>
+                  <span class="divider-dot"></span>
+                  <span class="divider-line flank-right"></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ==========================================
+               PHASE 2: AROMATIC. AUTHENTIC. UNFORGETTABLE.
+               Desktop: WhatsApp Image 2026-09-18 at 5.39.59 PM
+               Mobile: Panel 3 (AUTHENTIC)
+               ========================================== -->
+          <div class="hero-stage" id="stage-2" data-align="center">
+            <div class="stage-content stage-2-content">
+
+              <!-- Desktop Version -->
+              <div class="desktop-only-block stage-2-desktop">
+                <svg class="chef-hat-icon" viewBox="0 0 54 48" fill="none" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M14 32 C9 30, 6 24, 8 18 C10 12, 17 10, 20 13 C22 6, 32 6, 34 13 C37 10, 44 12, 46 18 C48 24, 45 30, 40 32" />
+                  <path d="M23 15 V 30" />
+                  <path d="M31 15 V 30" />
+                  <ellipse cx="27" cy="38" rx="14" ry="4" />
+                </svg>
+
+                <div class="eyebrow-wrapper">
+                  <span class="eyebrow-line flank-left"></span>
+                  <span class="eyebrow-text">AUTHENTIC CUISINE</span>
+                  <span class="eyebrow-line flank-right"></span>
+                </div>
+
+                <h2 class="ref2-headline">Aromatic. Authentic. Unforgettable.</h2>
+
+                <div class="ref2-sub-row">
+                  <span class="sub-flank-line flank-left"></span>
+                  <span class="sub-text">Freshly prepared</span>
+                  <!-- Exact tilted gold leaf icon -->
+                  <svg class="gold-leaf-icon" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 19 C7 15, 11 9, 19 5 C19 13, 13 17, 9 19 Z" fill="#e5c183" />
+                    <path d="M5 19 L15 9" stroke="#996a26" stroke-width="1.2" stroke-linecap="round" />
+                  </svg>
+                  <span class="sub-text">Richly flavoured</span>
+                  <span class="sub-flank-line flank-right"></span>
+                </div>
+              </div>
+
+              <!-- Mobile Version (Panel 3) -->
+              <div class="mobile-only-block stage-2-mobile">
+                <h2 class="mobile-three-line-serif">
+                  <span>AROMATIC.</span>
+                  <span>AUTHENTIC.</span>
+                  <span>UNFORGETTABLE.</span>
+                </h2>
+
+                <p class="mobile-sub-italic">
+                  Freshly prepared • Richly flavoured
+                </p>
+
+                <div class="divider-ornament">
+                  <span class="divider-line flank-left"></span>
+                  <span class="divider-dot"></span>
+                  <span class="divider-line flank-right"></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ==========================================
+               PHASE 3: FROM THE FIRST AROMA
+               Desktop: WhatsApp Image 2026-09-18 at 5.40.10 PM
+               Mobile: Panel 4 (JOURNEY)
+               ========================================== -->
+          <div class="hero-stage" id="stage-3" data-align="left">
+            <div class="stage-content stage-3-content">
+
+              <!-- Desktop Version -->
+              <div class="desktop-only-block stage-3-desktop">
+                <svg class="chef-hat-icon" viewBox="0 0 54 48" fill="none" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M14 32 C9 30, 6 24, 8 18 C10 12, 17 10, 20 13 C22 6, 32 6, 34 13 C37 10, 44 12, 46 18 C48 24, 45 30, 40 32" />
+                  <path d="M23 15 V 30" />
+                  <path d="M31 15 V 30" />
+                  <ellipse cx="27" cy="38" rx="14" ry="4" />
+                </svg>
+
+                <div class="eyebrow-wrapper">
+                  <span class="eyebrow-line flank-left"></span>
+                  <span class="eyebrow-text">A JOURNEY OF FLAVOURS</span>
+                  <span class="eyebrow-line flank-right"></span>
+                </div>
+
+                <div class="ref3-lead">FROM THE FIRST</div>
+                <h2 class="ref3-aroma-glow">AROMA</h2>
+                <p class="ref3-lastbite">to the very last bite.</p>
+
+                <div class="divider-ornament">
+                  <span class="divider-line flank-left"></span>
+                  <span class="divider-bullseye">
+                    <span class="inner-dot"></span>
+                  </span>
+                  <span class="divider-line flank-right"></span>
+                </div>
+              </div>
+
+              <!-- Mobile Version (Panel 4) -->
+              <div class="mobile-only-block stage-3-mobile">
+                <div class="mobile-eyebrow-simple">FROM THE</div>
+                <h2 class="mobile-aroma-gold">FIRST AROMA</h2>
+                <p class="mobile-sub-italic">to the very last bite.</p>
+
+                <div class="divider-ornament">
+                  <span class="divider-line flank-left"></span>
+                  <span class="divider-dot"></span>
+                  <span class="divider-line flank-right"></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ==========================================
+               PHASE 4: BIRYANI & CHINESE
+               Desktop: WhatsApp Image 2026-09-18 at 5.40.17 PM
+               Mobile: Panel 5 (CUISINE)
+               ========================================== -->
+          <div class="hero-stage" id="stage-4" data-align="left">
+            <div class="stage-content stage-4-content">
+
+              <!-- Desktop Version -->
+              <div class="desktop-only-block stage-4-desktop">
+                <svg class="chef-hat-icon" viewBox="0 0 54 48" fill="none" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M14 32 C9 30, 6 24, 8 18 C10 12, 17 10, 20 13 C22 6, 32 6, 34 13 C37 10, 44 12, 46 18 C48 24, 45 30, 40 32" />
+                  <path d="M23 15 V 30" />
+                  <path d="M31 15 V 30" />
+                  <ellipse cx="27" cy="38" rx="14" ry="4" />
+                </svg>
+
+                <div class="eyebrow-wrapper">
+                  <span class="eyebrow-line flank-left"></span>
+                  <span class="eyebrow-text">OUR SIGNATURE CUISINE</span>
+                  <span class="eyebrow-line flank-right"></span>
+                </div>
+
+                <h2 class="ref4-headline">
+                  <span class="gold-text">BIRYANI</span>
+                  <span class="cream-text">&amp; CHINESE</span>
+                </h2>
+
+                <p class="ref4-subtitle">Made for moments worth remembering.</p>
+
+                <div class="divider-ornament">
+                  <span class="divider-line flank-left"></span>
+                  <span class="divider-bullseye">
+                    <span class="inner-dot"></span>
+                  </span>
+                  <span class="divider-line flank-right"></span>
+                </div>
+              </div>
+
+              <!-- Mobile Version (Panel 5) -->
+              <div class="mobile-only-block stage-4-mobile">
+                <h2 class="mobile-biryani-chinese">
+                  <span>BIRYANI &amp;</span>
+                  <span>CHINESE</span>
+                </h2>
+
+                <p class="mobile-moments-italic">
+                  <span>Made for moments</span>
+                  <span>worth remembering.</span>
+                </p>
+
+                <div class="divider-ornament">
+                  <span class="divider-line flank-left"></span>
+                  <span class="divider-dot"></span>
+                  <span class="divider-line flank-right"></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ==========================================
+               PHASE 5: FINAL HERO (It's not just Food, It's an Experience.)
+               Desktop: WhatsApp Image 2026-09-18 at 5.40.27 PM
+               Mobile: Panel 6 (FINAL HERO)
+               ========================================== -->
+          <div class="hero-stage" id="stage-5" data-align="left">
+            <div class="stage-content stage-5-content">
+
+              <!-- Desktop Version -->
+              <div class="desktop-only-block stage-5-desktop">
+                <svg class="chef-hat-icon" viewBox="0 0 54 48" fill="none" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M14 32 C9 30, 6 24, 8 18 C10 12, 17 10, 20 13 C22 6, 32 6, 34 13 C37 10, 44 12, 46 18 C48 24, 45 30, 40 32" />
+                  <path d="M23 15 V 30" />
+                  <path d="M31 15 V 30" />
+                  <ellipse cx="27" cy="38" rx="14" ry="4" />
+                </svg>
+
+                <div class="eyebrow-wrapper">
+                  <span class="eyebrow-line flank-left"></span>
+                  <span class="eyebrow-text">A TASTE BEYOND ORDINARY</span>
+                  <span class="eyebrow-line flank-right"></span>
+                </div>
+
+                <h2 class="ref5-headline">
+                  <span class="headline-l1">It's not just</span>
+                  <span class="headline-l2">Food, It's an</span>
+                  <span class="headline-l3 experience-gold">Experience.</span>
+                </h2>
+
+                <div class="divider-ornament">
+                  <span class="divider-line flank-left"></span>
+                  <span class="divider-bullseye">
+                    <span class="inner-dot"></span>
+                  </span>
+                  <span class="divider-line flank-right"></span>
+                </div>
+
+                <p class="ref5-desc">
+                  From aromatic biryanis to irresistible Chinese flavors,<br />
+                  we bring you a perfect blend of taste, quality and<br />
+                  happiness in every bite.
+                </p>
+
+                <div class="ref5-cta-group">
+                  <a href="#menu" class="btn-primary-explore-exact" id="explore-menu-btn">
+                    <span>EXPLORE MENU</span>
+                    <span class="btn-arrow">&rarr;</span>
+                  </a>
+                  <a href="#categories" class="btn-secondary-categories-exact" id="view-categories-btn">
+                    VIEW CATEGORIES
+                  </a>
+                </div>
+              </div>
+
+              <!-- Mobile Version (Panel 6) -->
+              <div class="mobile-only-block stage-5-mobile">
+                <div class="mobile-eyebrow-wrapper">
+                  <div class="mobile-eyebrow-line-row">
+                    <span class="eyebrow-line flank-left"></span>
+                    <span class="eyebrow-text">GOOD FOOD</span>
+                    <span class="eyebrow-line flank-right"></span>
+                  </div>
+                  <div class="eyebrow-subtext">HAPPIER PEOPLE</div>
+                </div>
+
+                <h2 class="mobile-experience-headline">
+                  <span>It's not just</span>
+                  <span>Food, It's an</span>
+                  <span class="gold-experience">Experience.</span>
+                </h2>
+
+                <div class="divider-ornament">
+                  <span class="divider-line flank-left"></span>
+                  <span class="divider-dot"></span>
+                  <span class="divider-line flank-right"></span>
+                </div>
+
+                <p class="mobile-desc-copy">
+                  Bold flavours. Great food. Happier people.
+                </p>
+
+                <div class="mobile-cta-column">
+                  <a href="#menu-section" class="btn-primary-explore-exact" id="mobile-explore-menu-btn">
+                    <span>EXPLORE MENU</span>
+                    <span class="btn-arrow">&rarr;</span>
+                  </a>
+                  <a href="#menu-category-section" class="btn-secondary-categories-exact"
+                    id="mobile-view-categories-btn">
+                    VIEW CATEGORIES
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div><!-- /.hero-text-overlay -->
+
+      </div><!-- /.hero-pinned-viewport -->
+    </div><!-- /.hero-scroll-wrapper -->
+
+    <!-- ==========================================================================
+         MENU SECTION (Visual Source of Truth: Reference Image 1)
+         ========================================================================== -->
+    <section class="menu-section" id="menu-section" aria-label="Our Authentic Culinary Menu">
+
+      <!-- Menu Hero Banner -->
+      <div class="menu-hero-banner" id="menu-hero-banner">
+        <div class="menu-hero-left">
+          <h1 class="menu-hero-title">MENU</h1>
+          <span class="menu-hero-subtitle">GREAT FOOD &bull; BOLDER FLAVOURS &bull; ALWAYS HERE</span>
+        </div>
+
+        <div class="menu-hero-right">
+          <div class="menu-calligraphy-quote">
+            <span class="script-line-1">Same</span>
+            <span class="script-line-2">Taste</span>
+            <span class="script-line-3">Bigger</span>
+            <span class="script-line-4">Stories</span>
+          </div>
+          <img src="/menu_assets/menu_header_biryani.png" alt="Royal Biryani Dish" class="menu-hero-dish-img"
+            loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Horizontal Category Carousel -->
+      <nav class="menu-category-section" id="menu-category-section" aria-label="Menu Categories">
+        <div class="menu-categories-wrapper" id="menu-categories-list">
+          <!-- Dynamically injected by MenuController with ALL as first item -->
+        </div>
+      </nav>
+
+      <!-- Section Divider matching reference -->
+      <div class="menu-carousel-divider"></div>
+
+      <!-- Our Menu Header & Direct Dietary Filters Row -->
+      <div class="menu-controls-bar">
+        <div class="menu-title-filter-row">
+          <div class="menu-controls-left">
+            <h2 class="menu-section-title">Our Menu</h2>
+            <span class="menu-section-subtitle" id="menu-count-label">22 dishes</span>
+          </div>
+
+          <!-- Direct Veg / Non-Veg Filters (Visible on all screens) -->
+          <div class="dietary-filter-group" id="dietary-filter-group">
+            <button class="btn-diet-filter btn-diet-veg" data-diet="veg" id="filter-veg-btn"
+              aria-label="Filter Vegetarian items">
+              <svg class="diet-filter-icon svg-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+              </svg>
+              <span>Veg</span>
+            </button>
+            <button class="btn-diet-filter btn-diet-nonveg" data-diet="non-veg" id="filter-nonveg-btn"
+              aria-label="Filter Non-Vegetarian items">
+              <svg class="diet-filter-icon svg-drumstick" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M19.35 4.65c-2.34-2.34-6.14-2.34-8.49 0L7.7 7.82c-.8.8-1.2 1.86-1.16 2.92.05 1.07.53 2.08 1.34 2.8l-4.17 4.17c-.39.39-.39 1.02 0 1.41l.71.71c.39.39 1.02.39 1.41 0l4.17-4.17c.72.81 1.73 1.29 2.8 1.34 1.06.04 2.12-.36 2.92-1.16l3.17-3.17c2.35-2.35 2.35-6.15.01-8.49z" />
+                <circle cx="4.5" cy="19.5" r="2" />
+              </svg>
+              <span>Non-Veg</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Search and Filter Bar Row (Visual Source of Truth: Reference Screenshot) -->
+        <div class="menu-search-filter-row">
+          <div class="menu-search-wrapper">
+            <svg class="menu-search-icon" viewBox="0 0 24 24" fill="none" stroke="#f5b842" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="menu-search-input" class="menu-search-input" placeholder="Search for dishes..."
+              autocomplete="off" />
+          </div>
+          <button class="menu-filter-icon-btn" id="menu-filter-icon-btn" aria-label="Filter dishes">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Sort Select (Desktop Only) -->
+        <div class="menu-sort-wrapper">
+          <select id="menu-sort-select" class="menu-sort-select" aria-label="Sort Menu Items">
+            <option value="popularity">Sort by: Popularity</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+          </select>
+          <svg class="menu-sort-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Food Card Grid (2 cards per row on mobile) -->
+      <div class="menu-grid-container">
+        <div class="menu-food-grid" id="menu-food-grid">
+          <!-- Food cards populated by MenuController -->
+        </div>
+      </div>
+
+    </section><!-- /.menu-section -->
+
+
+
+    <!-- ==========================================================================
+         TABLE RESERVATION SECTION
+         Visual Source of Truth: table_reservation_reference.jpg
+         ========================================================================== -->
+    <section class="reservation-section" id="reservation-section" aria-label="Table Reservation">
+      <!-- Ambient warm lighting glow -->
+      <div class="reservation-ambient-glow"></div>
+
+      <div class="reservation-hero-container">
+        <!-- Left Content Area -->
+        <div class="reservation-content-left">
+          <!-- Eyebrow: GOOD FOOD BETTER COMPANY flanked by thin lines -->
+          <div class="reservation-eyebrow">
+            <span class="flank-line"></span>
+            <span class="reservation-eyebrow-text">GOOD FOOD BETTER COMPANY</span>
+            <span class="flank-line"></span>
+          </div>
+
+          <!-- Main Heading: Book Your Table -->
+          <h2 class="reservation-title">
+            <span>Book Your</span>
+            <span>Table</span>
+          </h2>
+
+          <!-- Supporting Text -->
+          <p class="reservation-desc">
+            Great food, warm conversations and unforgettable moments. Reserve your table and let us take care of the
+            rest.
+          </p>
+
+          <!-- Reserve a Table CTA Button -->
+          <button class="btn-reserve-table-prominent" id="btn-reserve-table-prominent" data-open-reservation
+            aria-label="Reserve a Table">
+            <svg class="btn-calendar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+              <circle cx="8" cy="14" r="1" fill="currentColor"></circle>
+              <circle cx="12" cy="14" r="1" fill="currentColor"></circle>
+              <circle cx="16" cy="14" r="1" fill="currentColor"></circle>
+              <circle cx="8" cy="18" r="1" fill="currentColor"></circle>
+              <circle cx="12" cy="18" r="1" fill="currentColor"></circle>
+              <circle cx="16" cy="18" r="1" fill="currentColor"></circle>
+            </svg>
+            <span>Reserve a Table</span>
+            <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+
+          <!-- Three Trust Badges -->
+          <div class="reservation-trust-row">
+            <div class="trust-badge-item">
+              <div class="trust-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <span class="trust-badge-text">Perfect for<br />Families &amp; Friends</span>
+            </div>
+
+            <div class="trust-badge-item">
+              <div class="trust-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                  </polygon>
+                </svg>
+              </div>
+              <span class="trust-badge-text">Ideal for<br />Special Occasions</span>
+            </div>
+
+            <div class="trust-badge-item">
+              <div class="trust-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </div>
+              <span class="trust-badge-text">A Memorable<br />Dining Experience</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Area (Restaurant Interior) -->
+        <div class="reservation-visual-right">
+          <div class="reservation-img-frame">
+            <img src="/menu_assets/restaurant_interior_faded.png"
+              alt="Biryani &amp; Chinese District Luxury Candlelit Dining Room" class="reservation-interior-img"
+              loading="lazy" />
+            <div class="reservation-img-overlay"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Feature Strip (4 Benefit Items) -->
+      <div class="reservation-benefits-strip">
+        <div class="benefit-card-item">
+          <div class="benefit-card-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </div>
+          <div class="benefit-card-details">
+            <span class="benefit-card-title">Cozy Ambience</span>
+            <span class="benefit-card-desc">A warm and welcoming space.</span>
+          </div>
+        </div>
+
+        <div class="benefit-card-item">
+          <div class="benefit-card-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <div class="benefit-card-details">
+            <span class="benefit-card-title">Perfect for Gatherings</span>
+            <span class="benefit-card-desc">Family dinners, friends &amp; more.</span>
+          </div>
+        </div>
+
+        <div class="benefit-card-item">
+          <div class="benefit-card-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polygon points="6 3 18 3 22 9 12 22 2 9 6 3"></polygon>
+              <line x1="2" y1="9" x2="22" y2="9"></line>
+              <line x1="12" y1="22" x2="8" y2="9"></line>
+              <line x1="12" y1="22" x2="16" y2="9"></line>
+              <line x1="6" y1="3" x2="8" y2="9"></line>
+              <line x1="18" y1="3" x2="16" y2="9"></line>
+            </svg>
+          </div>
+          <div class="benefit-card-details">
+            <span class="benefit-card-title">Special Occasions</span>
+            <span class="benefit-card-desc">Birthdays, anniversaries, celebrations.</span>
+          </div>
+        </div>
+
+        <div class="benefit-card-item">
+          <div class="benefit-card-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+          </div>
+          <div class="benefit-card-details">
+            <span class="benefit-card-title">Prime Location</span>
+            <span class="benefit-card-desc">Meherma Barahat Pirpanti Road,<br />Near Purana Naaz Cinema Hall.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         LOCATION SECTION — REFERENCE IMAGE 1
+         ========================================================================== -->
+    <section class="location-section" id="location-section">
+      <div class="location-decor-corner"></div>
+
+      <div class="location-container">
+        <!-- Left Column: Content, Address Card, 4 Info Items, Script Quote -->
+        <div class="location-left-content">
+          <div class="location-eyebrow">Our Location</div>
+
+          <h2 class="location-title">
+            <span>Visit Our</span>
+            <span>Outlet</span>
+          </h2>
+
+          <p class="location-desc">
+            Great food deserves a great place. Come dine with us and experience the true taste of Biryani &amp; Chinese
+            District.
+          </p>
+
+          <!-- Address Card -->
+          <div class="location-address-card">
+            <div class="location-address-info">
+              <svg class="location-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <div class="address-text-group">
+                <span class="address-road">Meherma Barahat Pirpanti Road</span>
+                <span class="address-landmark">Near Purana Naaz Cinema Hall,<br />Meherma, Godda, Jharkhand -
+                  814154</span>
+              </div>
+            </div>
+
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Meherma+Barahat+Pirpanti+Road,+Near+Purana+Naaz+Cinema+Hall,+Godda,+Jharkhand+814154"
+              target="_blank" rel="noopener noreferrer" class="location-directions-btn" id="btn-get-directions">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <span>Get Directions</span>
+            </a>
+          </div>
+
+          <!-- 4 Horizontal Info Items -->
+          <div class="location-info-grid">
+            <div class="location-info-item">
+              <div class="info-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+              </div>
+              <span class="info-item-title">Call Us</span>
+              <span class="info-item-sub"><a href="tel:9334145381">+91 93341 45381</a></span>
+            </div>
+
+            <div class="location-info-item">
+              <div class="info-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <span class="info-item-title">Opening Hours</span>
+              <span class="info-item-sub">11:00 AM - 11:00 PM<br />(All Days)</span>
+            </div>
+
+            <div class="location-info-item">
+              <div class="info-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="4" stroke-width="2"></rect>
+                  <path d="M9 17V7h4a3 3 0 0 1 0 6H9" stroke-width="2"></path>
+                </svg>
+              </div>
+              <span class="info-item-title">Parking</span>
+              <span class="info-item-sub">Available</span>
+            </div>
+
+            <div class="location-info-item">
+              <div class="info-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <span class="info-item-title">Dine In</span>
+              <span class="info-item-sub">Family Friendly</span>
+            </div>
+          </div>
+
+          <!-- Bottom Script Quote -->
+          <div class="location-quote-block">
+            <svg class="location-leaf-emblem" viewBox="0 0 32 40" fill="none">
+              <path d="M12 28C12 20 18 14 26 12C26 20 20 26 12 28Z" fill="#d4a359" opacity="0.9" />
+              <path d="M8 38C14 34 22 28 26 12" stroke="#d4a359" stroke-width="2.2" stroke-linecap="round" />
+            </svg>
+            <div class="quote-text-group">
+              <span class="location-script-quote">&ldquo;Good Food Brings People Together&rdquo;</span>
+              <span class="location-brand-sub">Biryani &amp; Chinese District</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Enclosed Container (Storefront + Map + Google Maps CTA) -->
+        <div class="location-right-container">
+          <div class="location-storefront-wrapper">
+            <img src="/location_assets/outlet_storefront.png"
+              alt="Biryani &amp; Chinese District Luxury Outlet Storefront at Night" class="location-storefront-img"
+              loading="lazy" />
+          </div>
+
+          <div class="location-map-wrapper">
+            <img src="/location_assets/dark_map.png" alt="Biryani &amp; Chinese District Location Map"
+              class="location-map-img" loading="lazy" />
+          </div>
+
+          <div class="location-map-footer">
+            <a href="https://maps.google.com/?q=Meherma+Barahat+Pirpanti Road,+Near+Purana+Naaz+Cinema+Hall,+Godda,+Jharkhand+814154"
+              target="_blank" rel="noopener noreferrer" class="btn-open-gmaps" id="btn-open-gmaps">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                <line x1="8" y1="2" x2="8" y2="18"></line>
+                <line x1="16" y1="6" x2="16" y2="22"></line>
+              </svg>
+              <span>Open in Google Maps &rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOOTER SECTION — REFERENCE IMAGE 2
+         ========================================================================== -->
+    <footer class="site-footer" id="site-footer">
+
+      <!-- 2. Main 4-Column Footer Grid -->
+      <div class="footer-main-grid">
+        <!-- Col 1: Brand -->
+        <div class="footer-col-brand">
+          <a href="#" class="footer-brand-header" aria-label="Biryani &amp; Chinese District Home">
+            <img src="/menu_assets/restaurant_logo.png" alt="Biryani &amp; Chinese District Logo"
+              class="footer-brand-logo-img" />
+            <div class="footer-brand-text">
+              <span class="footer-brand-title">BIRYANI &amp; CHINESE</span>
+              <span class="footer-brand-subtitle">DISTRICT</span>
+              <span class="footer-brand-tagline">BIRYANI MEETS A BIGGER WORLD</span>
+            </div>
+          </a>
+
+          <p class="footer-brand-desc">
+            Authentic Biryani. Irresistible Chinese. Great food, happier people. Experience the perfect blend of
+            tradition and taste at Biryani &amp; Chinese District.
+          </p>
+
+          <div class="footer-social-strip">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn"
+              aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn"
+              aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-circle-btn"
+              aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                </path>
+                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#0b0704"></polygon>
+              </svg>
+            </a>
+            <a href="https://wa.me/919334145381" target="_blank" rel="noopener noreferrer" class="social-circle-btn"
+              aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col-links">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="#hero-scroll-wrapper">Home</a></li>
+            <li class="footer-link-item"><a href="#menu-section">Menu</a></li>
+            <li class="footer-link-item"><a href="#specials-section">Our Story</a></li>
+            <li class="footer-link-item"><a href="#location-section">Outlets</a></li>
+            <li class="footer-link-item"><a href="#location-section">Contact</a></li>
+            <li class="footer-link-item"><a href="#specials-section">Offers</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Our Outlets -->
+        <div class="footer-col-outlets">
+          <h4 class="footer-col-title">Our Outlets</h4>
+          <ul class="footer-outlets-list">
+            <li class="footer-outlet-item">
+              <svg class="outlet-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Meherma, Godda</span>
+              <span class="outlet-main-badge">Main Outlet</span>
+            </li>
+            <li class="footer-outlet-item">
+              <svg class="outlet-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Poreyahat</span>
+            </li>
+            <li class="footer-outlet-item">
+              <svg class="outlet-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Mahagama</span>
+            </li>
+            <li class="footer-outlet-item">
+              <svg class="outlet-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Pathargama</span>
+            </li>
+            <li class="footer-outlet-item">
+              <svg class="outlet-pin-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Additional Outlets Soon</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div class="footer-col-newsletter">
+          <h4 class="footer-col-title">Newsletter</h4>
+          <p class="newsletter-desc">
+            Get the latest updates, offers and special menus straight to your inbox.
+          </p>
+
+          <form class="newsletter-form" id="footer-newsletter-form" novalidate>
+            <div class="newsletter-input-group">
+              <input type="email" class="newsletter-input" id="newsletter-email" placeholder="Enter your email address"
+                required />
+              <button type="submit" class="newsletter-submit-btn" id="btn-newsletter-subscribe">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+                <span>Subscribe</span>
+              </button>
+            </div>
+
+            <label class="newsletter-consent-label">
+              <input type="checkbox" id="newsletter-consent" checked />
+              <span>I agree to receive updates and offers.</span>
+            </label>
+
+            <div class="newsletter-feedback" id="newsletter-feedback">
+              Thank you for subscribing to Biryani &amp; Chinese District!
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- 3. Lower Footer Feature Strip (Clean, without the architectural graphic) -->
+      <div class="footer-features-strip">
+        <div class="footer-features-container">
+          <div class="footer-feature-item">
+            <div class="feature-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <div class="feature-text-group">
+              <span class="feature-title">Fresh Ingredients</span>
+              <span class="feature-sub">Always the best</span>
+            </div>
+          </div>
+
+          <div class="footer-feature-item">
+            <div class="feature-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6z">
+                </path>
+                <line x1="6" y1="17" x2="18" y2="17"></line>
+              </svg>
+            </div>
+            <div class="feature-text-group">
+              <span class="feature-title">Expertly Cooked</span>
+              <span class="feature-sub">With passion</span>
+            </div>
+          </div>
+
+          <div class="footer-feature-item">
+            <div class="feature-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="feature-text-group">
+              <span class="feature-title">Great Ambience</span>
+              <span class="feature-sub">For everyone</span>
+            </div>
+          </div>
+
+          <div class="footer-feature-item">
+            <div class="feature-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                </path>
+              </svg>
+            </div>
+            <div class="feature-text-group">
+              <span class="feature-title">Happier People</span>
+              <span class="feature-sub">One meal at a time</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Final Copyright Bar -->
+      <div class="footer-copyright-bar">
+        <p class="footer-copyright-text">&copy; 2024 Biryani &amp; Chinese District. All rights reserved.</p>
+
+        <div class="footer-legal-links">
+          <a href="#" class="footer-legal-link">Privacy Policy</a>
+          <span class="footer-legal-divider">|</span>
+          <a href="#" class="footer-legal-link">Terms &amp; Conditions</a>
+          <span class="footer-legal-divider">|</span>
+          <a href="#" class="footer-legal-link">Refund Policy</a>
+          <span class="footer-legal-divider">|</span>
+          <a href="#" class="footer-legal-link">Sitemap</a>
+        </div>
+
+        <div class="footer-made-with">
+          <span>Made with <span class="heart-icon">&hearts;</span> in Jharkhand</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ==========================================================================
+         STICKY BOTTOM CART BAR (Visual Source of Truth: Reference Screenshot)
+         ========================================================================== -->
+    <aside class="sticky-cart-bar" id="sticky-cart-bar" aria-label="Sticky Cart Summary">
+      <div class="sticky-cart-left">
+        <img src="/images/menu/chicken-biryani.webp" alt="Cart Food Item" class="sticky-cart-thumb"
+          id="sticky-cart-thumb" />
+        <div class="sticky-cart-divider"></div>
+        <span class="sticky-cart-total" id="sticky-cart-total">₹0</span>
+        <div class="sticky-cart-divider"></div>
+        <span class="sticky-cart-count" id="sticky-cart-count">0 Items</span>
+      </div>
+      <button class="btn-sticky-view-cart trigger-view-cart" id="sticky-view-cart-btn" aria-label="View Cart">
+        <span>View Cart</span>
+        <span class="sticky-arrow">&rarr;</span>
+      </button>
+    </aside>
+
+    <!-- ==========================================================================
+         ITEM SELECTION BOTTOM DRAWER (Screen 2)
+         ========================================================================== -->
+    <div class="item-drawer-overlay" id="item-drawer-overlay"></div>
+    <div class="item-drawer" id="item-drawer" role="dialog" aria-modal="true" aria-label="Item Options"></div>
+
+    <!-- ==========================================================================
+         FULL CART PAGE (Screen 3)
+         ========================================================================== -->
+    <div class="cart-page" id="cart-page" role="dialog" aria-modal="true" aria-label="Your Cart"></div>
+
+    <!-- ==========================================================================
+         CHECKOUT PAGE (Screen 4)
+         ========================================================================== -->
+    <div class="checkout-page" id="checkout-page" role="dialog" aria-modal="true" aria-label="Checkout"></div>
+
+    <!-- ==========================================================================
+         TABLE RESERVATION BOOKING MODAL (Hidden until Reserve a Table is clicked)
+         ========================================================================== -->
+    <div class="reservation-modal-overlay" id="reservation-modal-overlay" role="dialog" aria-modal="true"
+      aria-labelledby="reservation-modal-title">
+      <div class="reservation-modal-dialog" id="reservation-modal-dialog">
+        <!-- Modal Header -->
+        <div class="reservation-modal-header">
+          <div class="modal-header-text">
+            <h3 class="reservation-modal-title" id="reservation-modal-title">Reserve a Table</h3>
+            <span class="reservation-modal-subtitle">Join us for a royal dining experience</span>
+          </div>
+          <button class="btn-modal-close close-reservation-modal" aria-label="Close Reservation Modal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Reservation Input Form -->
+        <form id="reservation-form" novalidate>
+          <div class="reservation-form-grid">
+            <!-- Full Name -->
+            <div class="form-field">
+              <label for="res-name" class="form-label">Full Name *</label>
+              <input type="text" id="res-name" class="form-input" placeholder="e.g. Rahul Sharma" required />
+              <span class="form-error-msg">Please enter your name</span>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-field">
+              <label for="res-phone" class="form-label">Phone Number *</label>
+              <input type="tel" id="res-phone" class="form-input" placeholder="10-digit mobile number" maxlength="10"
+                required />
+              <span class="form-error-msg">Please enter a valid 10-digit number</span>
+            </div>
+
+            <!-- Date -->
+            <div class="form-field">
+              <label for="res-date" class="form-label">Date *</label>
+              <input type="date" id="res-date" class="form-input" required />
+              <span class="form-error-msg">Please choose a valid date</span>
+            </div>
+
+            <!-- Preferred Time -->
+            <div class="form-field">
+              <label for="res-time" class="form-label">Preferred Time *</label>
+              <select id="res-time" class="form-select" required>
+                <option value="" disabled selected>Select dining time</option>
+                <option value="12:00 PM">12:00 PM (Lunch)</option>
+                <option value="01:00 PM">01:00 PM (Lunch)</option>
+                <option value="02:00 PM">02:00 PM (Lunch)</option>
+                <option value="03:00 PM">03:00 PM (Late Lunch)</option>
+                <option value="07:00 PM">07:00 PM (Dinner)</option>
+                <option value="08:00 PM">08:00 PM (Dinner)</option>
+                <option value="08:30 PM">08:30 PM (Dinner)</option>
+                <option value="09:00 PM">09:00 PM (Dinner)</option>
+                <option value="09:30 PM">09:30 PM (Late Dinner)</option>
+                <option value="10:00 PM">10:00 PM (Late Dinner)</option>
+              </select>
+              <span class="form-error-msg">Please select a time</span>
+            </div>
+
+            <!-- Number of Guests -->
+            <div class="form-field">
+              <label for="res-guests" class="form-label">Number of Guests *</label>
+              <select id="res-guests" class="form-select" required>
+                <option value="" disabled selected>Select number of guests</option>
+                <option value="1">1 Person (Solo Dining)</option>
+                <option value="2">2 Persons (Couple / Date)</option>
+                <option value="3">3 Persons</option>
+                <option value="4">4 Persons (Standard Table)</option>
+                <option value="5">5 Persons</option>
+                <option value="6">6 Persons (Family Table)</option>
+                <option value="8">8 Persons (Celebration Group)</option>
+                <option value="10">10+ Persons (Large Gathering)</option>
+              </select>
+              <span class="form-error-msg">Please select guest count</span>
+            </div>
+
+            <!-- Occasion -->
+            <div class="form-field">
+              <label for="res-occasion" class="form-label">Occasion</label>
+              <select id="res-occasion" class="form-select">
+                <option value="Family Dining">Family Dining</option>
+                <option value="Birthday Celebration">Birthday</option>
+                <option value="Anniversary">Anniversary</option>
+                <option value="Date Night">Date Night</option>
+                <option value="Friends &amp; Family">Friends &amp; Family</option>
+                <option value="Business Lunch">Business Lunch</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <!-- Special Requests -->
+            <div class="form-field form-group-full">
+              <label for="res-requests" class="form-label">Special Requests (Optional)</label>
+              <textarea id="res-requests" class="form-textarea"
+                placeholder="Seating preference, birthday candle, high chair, dietary notes..."></textarea>
+            </div>
+
+            <!-- Modal Action Buttons -->
+            <div class="modal-actions-row">
+              <button type="button" class="btn-modal-cancel close-reservation-modal">Cancel</button>
+              <button type="submit" class="btn-modal-submit" id="btn-submit-reservation">
+                <span>Confirm Reservation</span>
+                <span class="btn-arrow">&rarr;</span>
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <!-- Post-Submission Confirmation State -->
+        <div class="reservation-confirm-card" id="reservation-confirm-card">
+          <div class="confirm-badge-icon">&#10003;</div>
+          <h3 class="confirm-main-title">Reservation Request Received</h3>
+          <p class="confirm-greeting" id="confirm-customer-name">Thank you!</p>
+          <p class="confirm-notice">
+            Our team will contact you shortly to confirm your table and ensure a wonderful dining experience.
+          </p>
+
+          <div class="confirm-details-summary">
+            <div class="summary-row">
+              <span class="summary-label">Name:</span>
+              <span class="summary-val" id="summary-res-name">-</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Phone:</span>
+              <span class="summary-val" id="summary-res-phone">-</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Date &amp; Time:</span>
+              <span class="summary-val" id="summary-res-datetime">-</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Party Size:</span>
+              <span class="summary-val" id="summary-res-guests">-</span>
+            </div>
+            <div class="summary-row">
+              <span class="summary-label">Occasion:</span>
+              <span class="summary-val" id="summary-res-occasion">-</span>
+            </div>
+          </div>
+
+          <button type="button" class="btn-confirm-done" id="btn-reservation-done">Done</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

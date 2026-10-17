@@ -1,0 +1,510 @@
+/* ==========================================================================
+   LOCATION SECTION — REFERENCE-LOCKED TO REFERENCE IMAGE 1
+   ========================================================================== */
+
+.location-section {
+  position: relative;
+  background-color: #080605;
+  background-image: 
+    radial-gradient(circle at 85% 25%, rgba(212, 163, 89, 0.06) 0%, transparent 55%),
+    radial-gradient(circle at 15% 45%, rgba(212, 163, 89, 0.04) 0%, transparent 50%),
+    linear-gradient(180deg, #060403 0%, #080605 100%);
+  color: #f5efe6;
+  padding: 100px 0 80px;
+  overflow: hidden;
+  border-top: 1px solid rgba(212, 163, 89, 0.15);
+}
+
+/* Background botanical decoration in bottom-left corner */
+.location-decor-corner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 140px;
+  height: 280px;
+  background: url('/location_assets/location_leaves_decor.png') no-repeat bottom left;
+  background-size: contain;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.location-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 36px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   LEFT COLUMN
+   ========================================================================== */
+.location-left-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Eyebrow: —— OUR LOCATION —— */
+.location-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  color: #d4a359;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.location-eyebrow::before,
+.location-eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: rgba(212, 163, 89, 0.45);
+}
+
+/* Main Heading: Visit Our Outlet */
+.location-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.08;
+  color: #f5ede2;
+  letter-spacing: -0.01em;
+  margin: 0 0 20px;
+}
+
+.location-title span {
+  display: block;
+}
+
+/* Supporting Paragraph */
+.location-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.68;
+  color: #a3988b;
+  max-width: 490px;
+  margin: 0 0 34px;
+}
+
+/* Address Card */
+.location-address-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: rgba(20, 15, 12, 0.9);
+  border: 1px solid rgba(212, 163, 89, 0.28);
+  border-radius: 18px;
+  padding: 22px 26px;
+  margin-bottom: 38px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-address-card:hover {
+  border-color: rgba(212, 163, 89, 0.5);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 163, 89, 0.1);
+}
+
+.location-address-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.location-pin-icon {
+  width: 26px;
+  height: 26px;
+  color: #d4a359;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.address-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.address-road {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f7f1e7;
+  margin-bottom: 4px;
+}
+
+.address-landmark {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.88rem;
+  color: #9c9183;
+  line-height: 1.5;
+}
+
+/* Get Directions Button */
+.location-directions-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #e2a952;
+  color: #120d08;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 13px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 6px 18px rgba(226, 169, 82, 0.32);
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.location-directions-btn:hover {
+  background: #f0b75e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(226, 169, 82, 0.45);
+  color: #0b0704;
+}
+
+.location-directions-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Four Info Items Arranged Horizontally */
+.location-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+}
+
+.location-info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.info-icon-circle {
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid rgba(212, 163, 89, 0.65);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4a359;
+  background: rgba(212, 163, 89, 0.05);
+  margin-bottom: 12px;
+  transition: all 0.25s ease;
+}
+
+.location-info-item:hover .info-icon-circle {
+  background: rgba(212, 163, 89, 0.15);
+  border-color: #d4a359;
+  transform: scale(1.06);
+}
+
+.info-icon-circle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.info-item-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #f2e9dc;
+  margin-bottom: 4px;
+}
+
+.info-item-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  color: #9c9183;
+  line-height: 1.4;
+}
+
+.info-item-sub a {
+  color: #9c9183;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.info-item-sub a:hover {
+  color: #d4a359;
+}
+
+/* Bottom Left Script Quote */
+.location-quote-block {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: auto;
+}
+
+.location-leaf-emblem {
+  width: 32px;
+  height: 40px;
+  flex-shrink: 0;
+  color: #d4a359;
+}
+
+.quote-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-script-quote {
+  font-family: 'Caveat', 'Alex Brush', cursive;
+  font-size: 1.85rem;
+  font-weight: 600;
+  color: #dcb36d;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.location-brand-sub {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: #8c8275;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+.location-brand-sub::before,
+.location-brand-sub::after {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  background: rgba(212, 163, 89, 0.4);
+}
+
+/* ==========================================================================
+   RIGHT COLUMN — ENCLOSED CONTAINER
+   ========================================================================== */
+.location-right-container {
+  border: 1px solid rgba(212, 163, 89, 0.32);
+  border-radius: 22px;
+  overflow: hidden;
+  background: #0d0a08;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 30px rgba(212, 163, 89, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-right-container:hover {
+  border-color: rgba(212, 163, 89, 0.48);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.75), 0 0 35px rgba(212, 163, 89, 0.08);
+}
+
+/* Outlet Storefront Photo */
+.location-storefront-wrapper {
+  position: relative;
+  width: 100%;
+  height: 270px;
+  overflow: hidden;
+  background: #090705;
+}
+
+.location-storefront-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.location-right-container:hover .location-storefront-img {
+  transform: scale(1.02);
+}
+
+/* Dark Map Display */
+.location-map-wrapper {
+  position: relative;
+  width: 100%;
+  height: 185px;
+  overflow: hidden;
+  border-top: 1px solid rgba(212, 163, 89, 0.2);
+  background: #0b0907;
+}
+
+.location-map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.96) contrast(1.04);
+}
+
+/* Outlined Google Maps Button */
+.location-map-footer {
+  padding: 18px 22px;
+  background: #0d0a08;
+  border-top: 1px solid rgba(212, 163, 89, 0.15);
+}
+
+.btn-open-gmaps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  padding: 13px 20px;
+  border: 1px solid rgba(212, 163, 89, 0.45);
+  border-radius: 30px;
+  background: rgba(212, 163, 89, 0.04);
+  color: #e8d8be;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.94rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: all 0.25s ease;
+}
+
+.btn-open-gmaps:hover {
+  background: rgba(212, 163, 89, 0.14);
+  border-color: #d4a359;
+  color: #ffffff;
+  box-shadow: 0 4px 18px rgba(212, 163, 89, 0.15);
+}
+
+.btn-open-gmaps svg {
+  width: 18px;
+  height: 18px;
+  color: #d4a359;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN FOR LOCATION SECTION
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .location-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 0 28px;
+  }
+
+  .location-desc {
+    max-width: 100%;
+  }
+
+  .location-title {
+    font-size: 3.2rem;
+  }
+
+  .location-right-container {
+    max-width: 680px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .location-section {
+    padding: 70px 0 60px;
+  }
+
+  .location-container {
+    padding: 0 20px;
+    gap: 36px;
+  }
+
+  .location-title {
+    font-size: 2.5rem;
+    line-height: 1.15;
+  }
+
+  .location-desc {
+    font-size: 0.95rem;
+    margin-bottom: 26px;
+  }
+
+  /* Stack Address Card vertically on mobile */
+  .location-address-card {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .location-directions-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+  }
+
+  /* Info items in a clean 2x2 grid */
+  .location-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 16px;
+    margin-bottom: 36px;
+  }
+
+  .location-quote-block {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .quote-text-group {
+    align-items: center;
+  }
+
+  .location-storefront-wrapper {
+    height: 220px;
+  }
+
+  .location-map-wrapper {
+    height: 170px;
+  }
+}
+
+@media (max-width: 480px) {
+  .location-title {
+    font-size: 2.2rem;
+  }
+
+  .location-script-quote {
+    font-size: 1.55rem;
+  }
+
+  .address-road {
+    font-size: 0.98rem;
+  }
+
+  .address-landmark {
+    font-size: 0.82rem;
+  }
+
+  .info-item-title {
+    font-size: 0.86rem;
+  }
+
+  .info-item-sub {
+    font-size: 0.76rem;
+  }
+}
